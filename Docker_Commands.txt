@@ -1,0 +1,63 @@
+Docker Hub Pass: docker@123
+
+docker build .        // to create an image from docker file
+
+docker run -p 8000:80 <container_id>           // Attached mode 
+
+docker run -p 8000:80 -d <container_id>        // Detached mode
+
+docker start <container_name>  // Detached mode
+
+docker start -a <container_name>  // attached mode
+
+docker stop <container_id>
+
+docker ps  // List of running containers
+
+docker ps -a // List of all containers
+
+docker attach <container_name>/<container_id>
+
+docker logs <container_name>
+
+
+
+docker run -it <image_id>     // -i for interactive mode and -t for terminal TTY
+
+docker start -a -i <cantaner_name>
+
+docker rm <container_name>  	// remove stopped container
+
+docker images 			// all created images
+
+docker rmi <image_name> 	// remove images
+	- Note: if an image is used by start/stop container then it cannot be removed, You first need to remove the container first then only you can remove image.
+
+docker run -p 3000:80 -d -rm <image_name>		//-d dettached mode -rm to remove container after stop
+-------------------------------------------------------------------------
+
+docker image inspect <image_id>	// Info about the image
+
+docker cp dummy/.<localPath> <container_name>:/test	// Copy files from local to containers
+
+docker run -p 3000:80 -d --rm --name goalsapp <container_id>	// custom name to containers
+
+docker build -t <Repo_nameofimage>:<tag_version> .	// custom name to images
+
+docker push need some requirements
+- docker hub login session
+- image name with username/repo_name:tagname
+- command:  docker push <imgName>:<tagname>
+
+docker pull username/repo_name
+
+
+
+
+
+
+
+
+
+
+
